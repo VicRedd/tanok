@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanok</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">Tanok Inventario</h1>
+        
+        <h2>Agregar Carne</h2>
+        <form action="/projects" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="name" name="name" type="text" class="validate" required>
+                    <label for="name">Nombre de la Carne</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="description" name="description" type="text" class="validate" required>
+                    <label for="description">Project Description</label>
+                </div>
+            </div>
+            <button type="submit" class="btn waves-effect waves-light">Agregar Tipo</button>
+        </form>
+        
+        <h2>Carnes Existentes</h2>
+        <ul class="collection">
+            <% projects.forEach(project => { %>
+                <li class="collection-item">
+                    <strong><%= project.name %></strong>: <%= project.description %>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
